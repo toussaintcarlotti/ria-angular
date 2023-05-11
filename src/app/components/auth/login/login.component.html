@@ -1,0 +1,57 @@
+<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+  <form [formGroup]="form"
+    class="form w-100"
+    novalidate="novalidate"
+    id="kt_sign_in_form"
+    action=""
+    method="POST"
+  >
+    <div class="text-center mb-10">
+      <h1 class="text-dark mb-3">Connexion</h1>
+      <div class="text-gray-400 fw-bold fs-4">
+        Nouveau?
+        <a routerLink="" class="link-primary fw-bolder">Créer un compte</a>
+      </div>
+    </div>
+
+    <div class="fv-row mb-10">
+      <label for="email" class="form-label fs-6 fw-bolder text-dark"
+        >Email</label
+      >
+      <input
+        formControlName="email"
+        id="email"
+        class="form-control form-control-lg form-control-solid"
+        type="text"
+        name="email"
+      />
+    </div>
+
+    <div class="fv-row mb-10">
+      <div class="d-flex flex-stack mb-2">
+        <label for="password" class="form-label fw-bolder text-dark fs-6 mb-0"
+          >Mot de passe</label
+        >
+        <a href="" class="link-primary fs-6 fw-bolder">Mot de passe oublié ?</a>
+      </div>
+      <input
+        formControlName="password"
+        id="password"
+        class="form-control form-control-lg form-control-solid"
+        type="password"
+        name="password"
+        autocomplete="off"
+      />
+    </div>
+    <div class="text-center">
+      <button
+        type="submit"
+        (click)="onSubmitForm()"
+        id="kt_sign_in_submit"
+        class="btn btn-lg btn-primary w-100 mb-5"
+      >
+        <span class="indicator-label">Connexion</span>
+      </button>
+    </div>
+  </form>
+</div>

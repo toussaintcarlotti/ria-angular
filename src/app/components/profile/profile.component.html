@@ -1,0 +1,77 @@
+<div *ngIf="alert.type !== ''" class="alert alert-{{ alert.type }} alert-dismissible">
+  <div class="d-flex flex-column">
+    <h4 class="mb-1 text-dark">{{ alert.title }}</h4>
+    <span>{{ alert.message }}</span>
+  </div>
+  <button type="button" class="btn-close" (click)="resetAlert()" aria-label="Close"></button>
+</div>
+
+<div class="card mb-5 mb-xl-10">
+  <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+       data-bs-target="#kt_account_profile_details">
+    <div class="card-title m-0">
+      <h3 class="fw-bolder m-0">Informations de profil</h3>
+    </div>
+  </div>
+  <div id="kt_account_profile_details" class="collapse show">
+    <div class="card-body border-top p-9">
+      <form id="kt_account_profile_details_form" class="form" (submit)="updateProfile()"
+            action="" method="PUT">
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label required fw-bold fs-6">Nom</label>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" name="nom" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                       placeholder="Nom" [(ngModel)]="user.nom">
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+              </div>
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" name="prenom" class="form-control form-control-lg form-control-solid"
+                       placeholder="Prénom" [(ngModel)]="user.prenom">
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label required fw-bold fs-6">Email université</label>
+          <div class="col-lg-8 fv-row fv-plugins-icon-container">
+            <input type="text" name="mail_univ" class="form-control form-control-lg form-control-solid"
+                   placeholder="Email université" [(ngModel)]="user.mail_univ">
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label fw-bold fs-6">
+            <span class="required">Téléphone</span>
+          </label>
+          <div class="col-lg-8 fv-row fv-plugins-icon-container">
+            <input type="tel" name="phone" class="form-control form-control-lg form-control-solid"
+                   placeholder="Téléphone" [(ngModel)]="user.tel">
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label fw-bold fs-6 required">Email</label>
+          <div class="col-lg-8 fv-row">
+            <input type="text" name="email" class="form-control form-control-lg form-control-solid"
+                   placeholder="Email" [(ngModel)]="user.email">
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-4 col-form-label fw-bold fs-6 required">Mot de passe</label>
+          <div class="col-lg-8 fv-row">
+            <input type="text" name="password" class="form-control form-control-lg form-control-solid"
+                   placeholder="Mot de passe" [(ngModel)]="user.password">
+          </div>
+        </div>
+
+        <div class="card-footer d-flex justify-content-end py-6 px-9">
+          <a routerLink="/" class="btn btn-light btn-active-light-primary me-2">Retour</a>
+          <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Sauvegarder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
