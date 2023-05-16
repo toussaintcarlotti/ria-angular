@@ -9,33 +9,29 @@
 
 <div class="card">
   <div class="card-body">
-    <table *ngIf="etudiants.length > 0" datatable id="students-table" [dtOptions]="dtOptions" class="table table-row-dashed table-row-gray-300 gy-7">
+    <table *ngIf="enseignants.length > 0" datatable id="students-table" [dtOptions]="dtOptions" class="table table-row-dashed table-row-gray-300 gy-7">
       <thead>
       <tr class="fw-bolder fs-6 text-gray-800">
         <th>Nom</th>
         <th>Prénom</th>
         <th>Email</th>
-        <th>Diplôme</th>
-        <th>Filière</th>
         <th *ngIf="user.status === 'Admin'"></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let etudiant of etudiants">
-        <td>{{ etudiant.user.nom }}</td>
-        <td>{{ etudiant.user.prenom }}</td>
-        <td>{{ etudiant.user.email }}</td>
-        <td>{{ etudiant.diplome_etudiant }}</td>
-        <td>{{ etudiant.filiere.nom }}</td>
+      <tr *ngFor="let enseignant of enseignants">
+        <td>{{ enseignant.user.nom }}</td>
+        <td>{{ enseignant.user.prenom }}</td>
+        <td>{{ enseignant.user.email }}</td>
         <td *ngIf="user.status === 'Admin'">
-          <div class="d-flex gap-2">
-            <a class="btn btn-sm btn-icon btn-light-info" routerLink="/etudiant/{{etudiant.filiere.id}}/emplois-du-temps">
+          <div class="d-flex gap-2 justify-content-end">
+            <a class="btn btn-sm btn-icon btn-light-info" routerLink="/enseignant/{{enseignant.id}}/emplois-du-temps">
               <i class="fa fa-calendar"></i>
             </a>
-            <a class="btn btn-sm btn-icon btn-light-warning" (click)="editEtudiant(etudiant.id)">
+            <a class="btn btn-sm btn-icon btn-light-warning" (click)="editEnseignant(enseignant.id)">
               <i class="fa fa-edit"></i>
             </a>
-            <button class="btn btn-sm btn-icon btn-light-danger" (click)="deleteEtudiant(etudiant.id)">
+            <button class="btn btn-sm btn-icon btn-light-danger" (click)="deleteEnseignant(enseignant.id)">
               <i class="fa fa-trash"></i>
             </button>
           </div>

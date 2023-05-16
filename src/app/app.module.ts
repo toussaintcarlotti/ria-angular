@@ -14,6 +14,13 @@ import {IndexEtudiantsComponent} from "./components/etudiants/index-etudiants/in
 import {CreateEtudiantComponent} from "./components/etudiants/create-etudiant/create-etudiant.component";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {DataTablesModule} from "angular-datatables";
+import { CreateEnseignantComponent } from './components/enseignants/create-enseignant/create-enseignant.component';
+import { EditEnseignantComponent } from './components/enseignants/edit-enseignant/edit-enseignant.component';
+import { IndexEnseignantsComponent } from './components/enseignants/index-enseignants/index-enseignants.component';
+import {EdtEtudiantComponent} from "./components/etudiants/edt-etudiant/edt-etudiant.component";
+import {FullCalendarModule} from "@fullcalendar/angular";
+import { CalendarComponent } from './tools/calendar/calendar.component';
+import { EdtEnseignantsComponent } from './components/enseignants/edt-enseignants/edt-enseignants.component';
 
 
 @NgModule({
@@ -27,6 +34,12 @@ import {DataTablesModule} from "angular-datatables";
     EditEtudiantComponent,
     IndexEtudiantsComponent,
     CreateEtudiantComponent,
+    CreateEnseignantComponent,
+    EditEnseignantComponent,
+    IndexEnseignantsComponent,
+    EdtEtudiantComponent,
+    CalendarComponent,
+    EdtEnseignantsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +50,7 @@ import {DataTablesModule} from "angular-datatables";
     ReactiveFormsModule,
     FormsModule,
     DataTablesModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

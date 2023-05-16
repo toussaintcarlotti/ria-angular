@@ -4,52 +4,52 @@
       <div class="col-md-6 mb-3">
         <label for="nom" class="form-label">Nom</label>
         <input type="text" class="form-control" id="nom"
-               name="nom" [(ngModel)]="etudiant.nom" placeholder="nom" >
+               name="nom" [(ngModel)]="enseignant.user.nom" placeholder="nom" >
       </div>
       <div class="col-md-6 mb-3">
         <label for="prenom" class="form-label">Prénom</label>
         <input type="text" class="form-control" id="prenom"
-               name="prenom" [(ngModel)]="etudiant.prenom" placeholder="prenom">
+               name="prenom" [(ngModel)]="enseignant.user.prenom" placeholder="prenom">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="responsabilite_enseignant" class="form-label">Résponsabilité</label>
+        <input type="text" class="form-control" id="responsabilite_enseignant"
+               name="responsabilite_enseignant" [(ngModel)]="enseignant.responsabilite_enseignant" placeholder="résponsabilité">
       </div>
 
       <div class="mb-3 col-md-6">
-        <label for="diplome_etudiant" class="form-label">Diplome étudiant</label>
-        <input name="diplome_etudiant" [(ngModel)]="etudiant.diplome_etudiant" type="text"
-               class="form-control"
-               id="diplome_etudiant" placeholder="Diplome" >
-      </div>
-
-      <div class="mb-3 col-md-6">
-        <label for="filiere_id" class="form-label">Filiere</label>
-        <select name="filiere_id" [(ngModel)]="etudiant.filiere_id" class="form-select" id="filiere_id" >
-          <option *ngFor="let filiere of filieres" [ngValue]="filiere.id">{{ filiere.nom }}</option>
+        <label for="role" class="form-label">Roles</label>
+        <select class="form-select" id="role" name="role" [(ngModel)]="enseignant.user.role_id">
+          <option value="">Selectionner un role</option>
+          <option *ngFor="let role of roles" [value]="role.id">{{ role.nom }}</option>
         </select>
       </div>
 
       <div class="mb-3 col-md-6">
         <label for="mail_univ" class="form-label">Email université</label>
-        <input name="mail_univ" [(ngModel)]="etudiant.mail_univ" type="email"
+        <input name="mail_univ" [(ngModel)]="enseignant.user.mail_univ" type="email"
                class="form-control" id="mail_univ"
                placeholder="Email" >
       </div>
 
       <div class="mb-3 col-md-6">
         <label for="tel" class="form-label">Téléphone</label>
-        <input name="tel" [(ngModel)]="etudiant.tel" type="text" class="form-control"
+        <input name="tel" [(ngModel)]="enseignant.user.tel" type="text" class="form-control"
                id="tel"
                placeholder="Téléphone" >
       </div>
 
       <div class="mb-3 col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input name="email" [(ngModel)]="etudiant.email" type="email" class="form-control"
+        <input name="email" [(ngModel)]="enseignant.user.email" type="email" class="form-control"
                id="email"
                placeholder="Email" >
       </div>
 
       <div class="col-md-6 mb-3">
         <label for="password" class="form-label">Mot de passe</label>
-        <input name="password" [(ngModel)]="etudiant.password" type="password" class="form-control" id="password"
+        <input name="password" [(ngModel)]="enseignant.user.password" type="password" class="form-control" id="password"
                placeholder="Password" >
       </div>
       <div class="d-flex justify-content-end">
